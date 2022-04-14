@@ -1,0 +1,17 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+FROM %IMAGE_TAG%
+
+# Add required repos
+RUN zypper -nq addrepo https://download.opensuse.org/repositories/openSUSE:Backports:SLE-15-SP4/standard/openSUSE:Backports:SLE-15-SP4.repo && \
+    zypper -nq --gpg-auto-import-keys refresh
+
+# Install shellcheck
+RUN zypper -nq install --no-recommends ShellCheck && \
+    zypper -nq clean --all
+
+# Install git
+RUN zypper -nq install --no-recommends git && \
+    zypper -nq clean --all

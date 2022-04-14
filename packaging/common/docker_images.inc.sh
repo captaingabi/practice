@@ -1,5 +1,9 @@
 # shellcheck disable=SC2148
+#
+# Copyright (c) Gabor Kapitany
+#
 # Docker image names and registries
+#
 
 LOCAL_REGISTRY='localhost'
 SUSE_REGISTRY='registry.suse.com'

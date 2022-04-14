@@ -1,3 +1,7 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
 FROM %IMAGE_TAG%
 
 RUN zypper -nq install --no-recommends python39 python39-pip && \

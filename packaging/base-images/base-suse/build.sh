@@ -1,5 +1,7 @@
 #!/bin/bash
 #
+# Copyright (c) Gabor Kapitany
+#
 # Build suse-base image
 #
 

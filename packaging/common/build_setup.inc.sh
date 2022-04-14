@@ -1,5 +1,9 @@
 # shellcheck disable=SC2148
+#
+# Copyright (c) Gabor Kapitany
+#
 # Common build options and variables
+#
 
 cleanup() {
     rm -rf "${TMP_DIR:-}"

@@ -2,7 +2,7 @@
 #
 # Copyright (c) Gabor Kapitany
 #
-# Build python3 base image
+# Build static checker baseimage
 #
 
 set -euxo pipefail
@@ -17,5 +17,5 @@ source "${TOP_DIR}"/packaging/common/docker_images.inc.sh
 generate_dockerfile "${DOCKER_SUSE_BASE_IMAGE}"
 
 docker build \
-    --tag "${DOCKER_SUSE_PYTHON3_IMAGE}" \
+    --tag "${DOCKER_STATIC_CHECKER_IMAGE}" \
     "${TMP_DIR}"

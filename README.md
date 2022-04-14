@@ -1,1 +1,3 @@
-# practice
+#
+# Copyright (c) Gabor Kapitany
+#
