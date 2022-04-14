@@ -1,0 +1,7 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+Django==4.0.5
+djangorestframework==3.13.1
+uWSGI==2.0.20

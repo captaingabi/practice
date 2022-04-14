@@ -16,6 +16,7 @@ export DOCKER_SUSE_BASE_IMAGE_EXT_SHA=sha256:af1a55d343943394675abd86dd49e12b8cc
 # Base images
 export DOCKER_SUSE_BASE_IMAGE="${LOCAL_REGISTRY}/practice/base-suse:${SUSE_BASE_VERSION}"
 export DOCKER_SUSE_PYTHON3_IMAGE="${LOCAL_REGISTRY}/practice/python3-suse:latest"
+export DOCKER_SUSE_DJANGO_IMAGE="${LOCAL_REGISTRY}/practice/django-suse:latest"
 
 # CI images
 export DOCKER_STATIC_CHECKER_IMAGE="${LOCAL_REGISTRY}/practice/static-checker:latest"

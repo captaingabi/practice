@@ -1,0 +1,16 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+FROM %IMAGE_TAG%
+
+COPY requirements_django.txt \
+     constraints_django.txt \
+     /tmp/
+
+RUN pip3.9 --no-cache-dir install \
+    --requirement /tmp/requirements_django.txt \
+    --constraint /tmp/constraints_django.txt
+
+RUN useradd -u 1000 -ml -g root django
+USER django
