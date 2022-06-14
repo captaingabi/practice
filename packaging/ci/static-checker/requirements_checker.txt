@@ -1,0 +1,6 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+bandit==1.7.4
+flake8==4.0.1

@@ -15,3 +15,9 @@ RUN zypper -nq install --no-recommends ShellCheck && \
 # Install git
 RUN zypper -nq install --no-recommends git && \
     zypper -nq clean --all
+
+# Install checker python modules
+COPY requirements_checker.txt /tmp/
+
+RUN pip3.9 --no-cache-dir install \
+    --requirement /tmp/requirements_checker.txt

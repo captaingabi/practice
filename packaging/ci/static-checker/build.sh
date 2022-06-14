@@ -14,7 +14,11 @@ TMP_DIR=$( mktemp --directory --tmpdir "${BUILD_DIR##*/}"-XXXXXX )
 source "${TOP_DIR}"/packaging/common/build_setup.inc.sh
 source "${TOP_DIR}"/packaging/common/docker_images.inc.sh
 
-generate_dockerfile "${DOCKER_SUSE_BASE_IMAGE}"
+rsync -rt \
+      "${BUILD_DIR}"/requirements_checker.txt \
+      "${TMP_DIR}/"
+
+generate_dockerfile "${DOCKER_SUSE_PYTHON3_IMAGE}"
 
 docker build \
     --tag "${DOCKER_STATIC_CHECKER_IMAGE}" \
