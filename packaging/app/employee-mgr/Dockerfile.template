@@ -1,0 +1,9 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+FROM %IMAGE_TAG%
+
+COPY /app /app
+
+CMD ["/app/entrypoint.sh"]

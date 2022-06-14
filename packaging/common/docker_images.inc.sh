@@ -18,5 +18,8 @@ export DOCKER_SUSE_BASE_IMAGE="${LOCAL_REGISTRY}/practice/base-suse:${SUSE_BASE_
 export DOCKER_SUSE_PYTHON3_IMAGE="${LOCAL_REGISTRY}/practice/python3-suse:latest"
 export DOCKER_SUSE_DJANGO_IMAGE="${LOCAL_REGISTRY}/practice/django-suse:latest"
 
+# App images
+export DOCKER_APP_EMPLOYEE_MGR="${LOCAL_REGISTRY}/practice/app-employee-mgr:latest"
+
 # CI images
 export DOCKER_STATIC_CHECKER_IMAGE="${LOCAL_REGISTRY}/practice/static-checker:latest"

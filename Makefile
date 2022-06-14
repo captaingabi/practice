@@ -8,6 +8,7 @@ TOP_DIR := $(shell git rev-parse --show-toplevel)
 
 BUILD = @bash -ec "exec $(1)"
 
+# Base Images
 .PHONY: base-suse
 base-suse:
 	$(call BUILD,$(TOP_DIR)/packaging/base-images/base-suse/build.sh)
@@ -19,6 +20,13 @@ python3-suse: base-suse
 .PHONY: django-suse
 django-suse: python3-suse
 	$(call BUILD,$(TOP_DIR)/packaging/base-images/django-suse/build.sh)
+
+# Apps
+.PHONY: employee-mgr
+employee-mgr:
+	$(call BUILD,$(TOP_DIR)/packaging/app/employee-mgr/build.sh)
+
+# CI Images
 
 .PHONY: static-checker
 static-checker: base-suse
