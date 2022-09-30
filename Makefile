@@ -6,7 +6,7 @@
 
 TOP_DIR := $(shell git rev-parse --show-toplevel)
 
-BUILD = @bash -ec "exec $(1)"
+BUILD = @bash -ec "exec $(1)  &> >(sed -e 's!^![$@] !')"
 
 # Base Images
 .PHONY: base-suse
@@ -23,13 +23,13 @@ django-suse: python3-suse
 
 # Apps
 .PHONY: employee-mgr
-employee-mgr:
+employee-mgr: django-suse
 	$(call BUILD,$(TOP_DIR)/packaging/app/employee-mgr/build.sh)
 
 # CI Images
 
 .PHONY: static-checker
-static-checker: base-suse
+static-checker: python3-suse
 	$(call BUILD,$(TOP_DIR)/packaging/ci/static-checker/build.sh)
 
 clean::
