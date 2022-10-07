@@ -3,6 +3,7 @@
 #
 
 ---
-- hosts: registry.captaingabi.com
+- name: Apply docker-registry role
+  hosts: registry.captaingabi.com
   roles:
-    - docker-registry
+    - docker_registry

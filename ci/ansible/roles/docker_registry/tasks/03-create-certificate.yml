@@ -3,17 +3,17 @@
 #
 
 ---
-- name: create registry key
+- name: Create registry key
   become: true
-  openssl_privatekey:
+  community.crypto.openssl_privatekey:
     path: /etc/docker/registry/key.pem
     owner: docker-registry
     group: docker-registry
     mode: 0600
 
-- name: create self signed csr
+- name: Create self signed csr
   become: true
-  openssl_csr:
+  community.crypto.openssl_csr:
     path: /etc/docker/registry/csr.pem
     common_name: localhost
     subject_alt_name:
@@ -21,9 +21,9 @@
       - 'DNS:registry.captaingabi.com'
     privatekey_path: /etc/docker/registry/key.pem
 
-- name: create self signed crt
+- name: Create self signed crt
   become: true
-  openssl_certificate:
+  community.crypto.x509_certificate:
     path: /etc/docker/registry/cert.pem
     provider: selfsigned
     csr_path: /etc/docker/registry/csr.pem

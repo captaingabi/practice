@@ -3,9 +3,9 @@
 #
 
 ---
-- name: install docker-registry
+- name: Install docker-registry
   become: true
-  apt:
+  ansible.builtin.apt:
     name:
       - docker-registry
     state: present

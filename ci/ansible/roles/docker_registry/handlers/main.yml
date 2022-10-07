@@ -3,14 +3,14 @@
 #
 
 ---
-- name: remount docker-registry data directory
+- name: Remount docker-registry data directory
   become: true
-  systemd:
+  ansible.builtin.systemd:
     name: var-lib-docker\x2dregistry.mount
     state: restarted
 
-- name: restart docker-registry
+- name: Restart docker-registry
   become: true
-  systemd:
+  ansible.builtin.systemd:
     name: docker-registry
     state: restarted

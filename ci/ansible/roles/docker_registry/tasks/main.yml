@@ -1,0 +1,19 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+---
+- name: Check pre-conditions
+  ansible.builtin.include_tasks: 01-pre-checks.yml
+
+- name: Install docker-registry
+  ansible.builtin.include_tasks: 02-install-docker-registry.yml
+
+- name: Create self signed certificate
+  ansible.builtin.include_tasks: 03-create-certificate.yml
+
+- name: Customize data directory
+  ansible.builtin.include_tasks: 04-create-data-directory.yml
+
+- name: Configure docker-registry
+  ansible.builtin.include_tasks: 05-configure-docker-registry.yml

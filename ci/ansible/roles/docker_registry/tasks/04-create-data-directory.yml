@@ -3,17 +3,18 @@
 #
 
 ---
-- name: create docker-registry data folder
+- name: Create docker-registry data folder
   become: true
-  file:
+  ansible.builtin.file:
     path: "{{ datadir }}/docker-registry"
+    mode: 0755
     owner: "docker-registry"
     group: "docker-registry"
     state: directory
 
-- name: install registry mount unit
+- name: Install registry mount unit
   become: true
-  template:
+  ansible.builtin.template:
     src: docker-registry.mount.j2
     dest: '/etc/systemd/system/var-lib-docker\x2dregistry.mount'
     mode: 0644

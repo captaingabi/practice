@@ -3,14 +3,14 @@
 #
 
 ---
-- name: check distribution
-  assert:
+- name: Check distribution
+  ansible.builtin.assert:
     that:
       - ansible_distribution_version in ['20.04']
       - ansible_distribution == 'Ubuntu'
     fail_msg: "This playbook supports only Ubuntu 20.04"
 
-- name: check variables
-  assert:
+- name: Check variables
+  ansible.builtin.assert:
     that:
       - datadir is defined

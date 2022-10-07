@@ -1,6 +1,0 @@
-#
-# Copyright (c) Gabor Kapitany
-#
-
----
-- import_playbook: roles/docker-registry.yml
