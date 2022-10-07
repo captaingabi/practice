@@ -2,5 +2,6 @@
 # Copyright (c) Gabor Kapitany
 #
 
+ansible-lint==6.8.0
 bandit==1.7.4
 flake8==4.0.1
