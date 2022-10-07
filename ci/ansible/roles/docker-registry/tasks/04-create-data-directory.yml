@@ -1,0 +1,24 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+---
+- name: create docker-registry data folder
+  become: true
+  file:
+    path: "{{ datadir }}/docker-registry"
+    owner: "docker-registry"
+    group: "docker-registry"
+    state: directory
+
+- name: install registry mount unit
+  become: true
+  template:
+    src: docker-registry.mount.j2
+    dest: '/etc/systemd/system/var-lib-docker\x2dregistry.mount'
+    mode: 0644
+    owner: root
+    group: root
+  notify:
+    - remount docker-registry data directory
+    - restart docker-registry

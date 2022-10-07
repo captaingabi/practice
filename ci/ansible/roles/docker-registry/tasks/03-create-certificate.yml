@@ -1,0 +1,31 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+---
+- name: create registry key
+  become: true
+  openssl_privatekey:
+    path: /etc/docker/registry/key.pem
+    owner: docker-registry
+    group: docker-registry
+    mode: 0600
+
+- name: create self signed csr
+  become: true
+  openssl_csr:
+    path: /etc/docker/registry/csr.pem
+    common_name: localhost
+    subject_alt_name:
+      - 'DNS:localhost'
+      - 'DNS:registry.captaingabi.com'
+    privatekey_path: /etc/docker/registry/key.pem
+
+- name: create self signed crt
+  become: true
+  openssl_certificate:
+    path: /etc/docker/registry/cert.pem
+    provider: selfsigned
+    csr_path: /etc/docker/registry/csr.pem
+    privatekey_path: /etc/docker/registry/key.pem
+  notify: restart docker-registry

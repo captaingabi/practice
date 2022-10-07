@@ -1,0 +1,16 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+---
+- name: remount docker-registry data directory
+  become: true
+  systemd:
+    name: var-lib-docker\x2dregistry.mount
+    state: restarted
+
+- name: restart docker-registry
+  become: true
+  systemd:
+    name: docker-registry
+    state: restarted

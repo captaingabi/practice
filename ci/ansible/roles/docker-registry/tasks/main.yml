@@ -1,0 +1,14 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+---
+- include_tasks: 01-pre-checks.yml
+
+- include_tasks: 02-install-docker-registry.yml
+
+- include_tasks: 03-create-certificate.yml
+
+- include_tasks: 04-create-data-directory.yml
+
+- include_tasks: 05-configure-docker-registry.yml

@@ -5,7 +5,9 @@
 
 set -euo pipefail
 
-mapfile -t CHECK_FILES < <(find /workdir -not -path '*/.*' -type f)
+mapfile -t CHECK_FILES < <(find /workdir -type f \
+    -not -path '*/.*' \
+    -not -path '*.j2' )
 WRONG_FILES=()
 
 for file in "${CHECK_FILES[@]}"; do

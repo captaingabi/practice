@@ -1,0 +1,24 @@
+---
+version: 0.1
+log:
+  fields:
+    service: registry
+storage:
+  cache:
+    blobdescriptor: inmemory
+  filesystem:
+    rootdirectory: /var/lib/docker-registry
+http:
+  addr: 0.0.0.0:5000
+  headers:
+    X-Content-Type-Options: [nosniff]
+  tls:
+    certificate: /etc/docker/registry/cert.pem
+    key: /etc/docker/registry/key.pem
+  http2:
+    disabled: false
+health:
+  storagedriver:
+    enabled: true
+    interval: 10s
+    threshold: 3

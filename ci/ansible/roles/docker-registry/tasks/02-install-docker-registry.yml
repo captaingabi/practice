@@ -1,0 +1,11 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+---
+- name: install docker-registry
+  become: true
+  apt:
+    name:
+      - docker-registry
+    state: present

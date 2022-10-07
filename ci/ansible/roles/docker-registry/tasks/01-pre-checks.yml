@@ -1,0 +1,16 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+---
+- name: check distribution
+  assert:
+    that:
+      - ansible_distribution_version in ['20.04']
+      - ansible_distribution == 'Ubuntu'
+    fail_msg: "This playbook supports only Ubuntu 20.04"
+
+- name: check variables
+  assert:
+    that:
+      - datadir is defined

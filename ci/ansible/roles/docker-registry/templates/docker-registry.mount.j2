@@ -1,0 +1,9 @@
+[Unit]
+Description=k3s docker-registry data files
+Before=docker-registry.service
+
+[Mount]
+What={{ datadir }}/docker-registry
+Where=/var/lib/docker-registry
+Type=none
+Options=bind

@@ -1,0 +1,11 @@
+[Unit]
+Description=The Docker tool set to pack, ship, store, and deliver content
+After=network.target
+RequiresMountsFor=/var/lib/docker-registry
+
+[Service]
+User=docker-registry
+ExecStart=/usr/bin/docker-registry serve /etc/docker/registry/config.yml
+
+[Install]
+WantedBy=multi-user.target
