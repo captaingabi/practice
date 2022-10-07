@@ -26,11 +26,21 @@ django-suse: python3-suse
 employee-mgr: django-suse
 	$(call BUILD,$(TOP_DIR)/packaging/app/employee-mgr/build.sh)
 
+.PHONY: app
+app: employee-mgr
+
 # CI Images
 
 .PHONY: static-checker
 static-checker: python3-suse
 	$(call BUILD,$(TOP_DIR)/packaging/ci/static-checker/build.sh)
+
+.PHONY: ci
+ci: static-checker
+
+# All
+.PHONY: all
+all: app ci
 
 clean::
 	@echo "Removing docker images ..."

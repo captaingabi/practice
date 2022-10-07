@@ -19,5 +19,5 @@ RUN zypper -nq install --no-recommends git && \
 # Install checker python modules
 COPY requirements_checker.txt /tmp/
 
-RUN pip3.9 --no-cache-dir install \
+RUN pip3.10 --no-cache-dir install \
     --requirement /tmp/requirements_checker.txt

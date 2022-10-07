@@ -5,5 +5,5 @@
 FROM %IMAGE_TAG%
 
 RUN zypper -nq install --no-recommends \
-        python39 python39-pip python39-devel gcc && \
+        python310 python310-pip python310-devel gcc && \
     zypper -nq clean --all

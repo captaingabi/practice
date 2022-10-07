@@ -8,7 +8,7 @@ COPY requirements_django.txt \
      constraints_django.txt \
      /tmp/
 
-RUN pip3.9 --no-cache-dir install \
+RUN pip3.10 --no-cache-dir install \
     --requirement /tmp/requirements_django.txt \
     --constraint /tmp/constraints_django.txt
 
