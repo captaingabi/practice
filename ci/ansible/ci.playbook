@@ -5,3 +5,4 @@
 ---
 - name: Setup CI environment
   import_playbook: roles/docker-registry.yml
+  import_playbook: roles/k3s.yml

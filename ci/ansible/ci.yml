@@ -1,0 +1,7 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+---
+- import_playbook: roles/docker-registry.yml
+- import_playbook: roles/k3s.yml

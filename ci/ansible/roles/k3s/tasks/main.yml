@@ -1,0 +1,7 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+---
+- name: Check pre-conditions
+  ansible.builtin.include_tasks: 01-pre-checks.yml
