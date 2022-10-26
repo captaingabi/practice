@@ -31,12 +31,16 @@ app: employee-mgr
 
 # CI Images
 
+.PHONY: ansible
+ansible: python3-suse
+	$(call BUILD,$(TOP_DIR)/packaging/ci/ansible/build.sh)
+
 .PHONY: static-checker
 static-checker: python3-suse
 	$(call BUILD,$(TOP_DIR)/packaging/ci/static-checker/build.sh)
 
 .PHONY: ci
-ci: static-checker
+ci: ansible static-checker
 
 # All
 .PHONY: all
