@@ -22,6 +22,30 @@
       },
       "revId": "fd1c4aaa7f857b185d64388483e3706cb79a4c14",
       "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "edfaa93e_445e5126",
+        "filename": "ci/ansible/ansible.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1020569
+      },
+      "writtenOn": "2022-10-26T15:46:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "866422df_11b40262",
+      "range": {
+        "startLine": 12,
+        "startChar": 23,
+        "endLine": 12,
+        "endChar": 44
+      },
+      "revId": "fd1c4aaa7f857b185d64388483e3706cb79a4c14",
+      "serverId": "d5d70762-12d0-45a1-890d-524b12d3f735"
     }
   ]
 }
