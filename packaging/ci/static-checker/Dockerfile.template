@@ -22,5 +22,5 @@ COPY requirements_checker.txt /tmp/
 RUN pip3.10 --no-cache-dir install \
     --requirement /tmp/requirements_checker.txt
 
-RUN useradd -ms /bin/bash checker
-USER checker
+RUN mkdir -p /.cache && chmod 777 /.cache
+RUN mkdir -p /.ansible && chmod 777 /.ansible
