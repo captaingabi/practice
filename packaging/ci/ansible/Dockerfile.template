@@ -1,0 +1,26 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+FROM %IMAGE_TAG%
+
+# Add required repos
+RUN zypper -nq addrepo https://download.opensuse.org/repositories/openSUSE:Backports:SLE-15-SP4/standard/openSUSE:Backports:SLE-15-SP4.repo && \
+    zypper -nq --gpg-auto-import-keys refresh
+
+# Install openssh sshpass
+RUN zypper -nq install --no-recommends openssh sshpass && \
+    zypper -nq clean --all
+
+# Install ansible python modules
+COPY requirements_ansible.txt /tmp/
+
+RUN pip3.10 --no-cache-dir install \
+    --requirement /tmp/requirements_ansible.txt
+
+# Add ansible user
+RUN useradd -ms /bin/bash ansible
+USER ansible
+
+# Skip host checking
+ENV ANSIBLE_HOST_KEY_CHECKING=False

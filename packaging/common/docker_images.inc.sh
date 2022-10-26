@@ -22,4 +22,5 @@ export DOCKER_SUSE_DJANGO_IMAGE="${LOCAL_REGISTRY}/practice/django-suse:latest"
 export DOCKER_APP_EMPLOYEE_MGR="${LOCAL_REGISTRY}/practice/app-employee-mgr:latest"
 
 # CI images
+export DOCKER_ANSIBLE_IMAGE="${LOCAL_REGISTRY}/practice/ansible:latest"
 export DOCKER_STATIC_CHECKER_IMAGE="${LOCAL_REGISTRY}/practice/static-checker:latest"

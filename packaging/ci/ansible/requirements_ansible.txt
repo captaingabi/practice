@@ -1,0 +1,5 @@
+#
+# Copyright (c) Gabor Kapitany
+#
+
+ansible==6.5.0
